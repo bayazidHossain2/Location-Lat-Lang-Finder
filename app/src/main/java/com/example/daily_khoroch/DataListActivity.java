@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 import com.example.daily_khoroch.Adapters.AmountAdapter;
 import com.example.daily_khoroch.Database.DatabaseHelper;
-import com.example.daily_khoroch.Model.Khoroch_Model;
+import com.example.daily_khoroch.Model.LocationModel;
 
 import java.util.ArrayList;
 
@@ -24,7 +24,7 @@ public class DataListActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rv_show);
         databaseHelper = new DatabaseHelper(DataListActivity.this);
 
-        ArrayList<Khoroch_Model> list = databaseHelper.getKhoroch();
+        ArrayList<LocationModel> list = databaseHelper.getKhoroch();
         AmountAdapter adapter = new AmountAdapter(DataListActivity.this,list);
         recyclerView.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(DataListActivity.this);

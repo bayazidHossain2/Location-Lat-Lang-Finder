@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#8BC34A"
+    android:layout_marginBottom="20dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name : "
+            android:textIsSelectable="true"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/tv_sample_location_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:textIsSelectable="true"
+            android:textColor="@color/black"
+            android:text="Location Nmae"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lat : "
+            android:textIsSelectable="true"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/tv_sample_location_lat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:textIsSelectable="true"
+            android:textColor="@color/black"
+            android:text="lat show"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lang : "
+            android:textIsSelectable="true"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/tv_sample_location_lang"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:textIsSelectable="true"
+            android:textColor="@color/black"
+            android:text="lang show"/>
+    </LinearLayout>
+
+</LinearLayout>

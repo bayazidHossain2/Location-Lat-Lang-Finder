@@ -7,6 +7,31 @@
     android:background="#AFABAB"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tv_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="msg"
+        app:layout_constraintBottom_toTopOf="@+id/btn_load"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:padding="8dp"
+        android:text=" Lang : "
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/et_lang"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_lang" />
+
     <Button
         android:id="@+id/btn_show"
         android:layout_width="wrap_content"
@@ -18,42 +43,109 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_mony_input"
-        android:layout_width="wrap_content"
+        android:id="@+id/et_location"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="176dp"
-        android:ems="10"
-        android:hint="Enter amount"
-        android:textSize="25dp"
-        android:padding="10dp"
-        android:inputType="number"
+        android:layout_marginEnd="16dp"
         android:background="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:ems="10"
+        android:hint="Enter Location Name"
+        android:inputType="textShortMessage"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#75171616"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19999999" />
 
     <EditText
-        android:id="@+id/et_short_desc"
-        android:layout_width="wrap_content"
+        android:id="@+id/et_lat"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="24dp"
         android:background="@color/white"
         android:ems="10"
-        android:padding="10dp"
         android:inputType="textPersonName"
-        android:hint="Enter Short Desc"
+        android:padding="10dp"
+        android:textColor="@color/black"
         android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="@+id/et_mony_input"
-        app:layout_constraintTop_toBottomOf="@+id/et_mony_input" />
+        app:layout_constraintEnd_toEndOf="@+id/et_location"
+        app:layout_constraintStart_toStartOf="@+id/et_location"
+        app:layout_constraintTop_toBottomOf="@+id/et_location" />
 
     <Button
-        android:id="@+id/btn_spand"
+        android:id="@+id/btn_load"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="64dp"
-        android:text="Spend"
+        android:layout_marginEnd="40dp"
+        android:text="Load"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_save"
+        app:layout_constraintEnd_toStartOf="@+id/btn_save"
+        app:layout_constraintTop_toTopOf="@+id/btn_save" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:padding="8dp"
+        android:text=" Location : "
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/et_location"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_short_desc" />
+        app:layout_constraintTop_toTopOf="@+id/et_location" />
+
+    <EditText
+        android:id="@+id/et_lang"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/et_lat"
+        app:layout_constraintStart_toStartOf="@+id/et_lat"
+        app:layout_constraintTop_toBottomOf="@+id/et_lat" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:padding="8dp"
+        android:text="Lat : "
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/et_lat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_lat" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_lang"
+        app:layout_constraintVertical_bias="0.32999998" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Clear"
+        app:layout_constraintEnd_toEndOf="@+id/btn_save"
+        app:layout_constraintStart_toStartOf="@+id/btn_load"
+        app:layout_constraintTop_toBottomOf="@+id/btn_save" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,14 +11,14 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.example.daily_khoroch.Model.Khoroch_Model;
+import com.example.daily_khoroch.Model.LocationModel;
 
 import java.util.ArrayList;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    static final String NAME = "Khoroch";
-    static final int VERSION = 1;
+    static final String NAME = "LocationDatabase";
+    static final int VERSION = 2;
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, NAME,null, VERSION);
@@ -28,39 +28,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(
-                "create table daily_khoroch" +
+                "create table Location_Table" +
                         "(id INTEGER primary key AUTOINCREMENT," +
-                        "Amount int," +
-                        "Short_desc text)"
+                        "Name text," +
+                        "Lat text," +
+                        "Lang text)"
         );
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("drop table if exists daily_khoroch");
+        sqLiteDatabase.execSQL("drop table if exists Location_Table");
         onCreate(sqLiteDatabase);
     }
 
-    public void insertKhoroch(Khoroch_Model model){
+    public void insertLocation(LocationModel model){
         SQLiteDatabase database = getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put("Amount",model.getAmount());
-        values.put("Short_desc",model.getDesc());
+        values.put("Name",model.getLocationName());
+        values.put("Lat",model.getLat());
+        values.put("Lang",model.getLang());
 
-        database.insert("daily_khoroch",null,values);
+        database.insert("Location_Table",null,values);
         Log.d(TAG, "**********Data inserted Success ***************");
     }
 
-    public ArrayList<Khoroch_Model> getKhoroch(){
+    public ArrayList<LocationModel> getKhoroch(){
         SQLiteDatabase database = getWritableDatabase();
         Cursor cursor;
-        cursor = database.rawQuery("select Amount,Short_desc from daily_khoroch",null);
-        ArrayList<Khoroch_Model> list;
+        cursor = database.rawQuery("select Name,Lat,Lang from Location_Table",null);
+        ArrayList<LocationModel> list;
         if(cursor.moveToFirst()){
             list = new ArrayList<>();
             do{
-                Khoroch_Model model = new Khoroch_Model(cursor.getInt(0),cursor.getString(1));
+                LocationModel model = new LocationModel(cursor.getString(0),cursor.
+                        getString(1),cursor.getString(2));
                 list.add(model);
             }while (cursor.moveToNext());
         }else{
